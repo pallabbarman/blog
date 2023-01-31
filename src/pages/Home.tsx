@@ -1,9 +1,9 @@
+import { lazy } from '@loadable/component';
+
+const Blogs = lazy(() => import('../components/Blogs'));
+
 function Home() {
-    return (
-        <div>
-            <h1>This is home</h1>
-        </div>
-    );
+    return <Blogs />;
 }
 
 export default Home;
