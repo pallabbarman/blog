@@ -38,7 +38,7 @@ function Navbar() {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar component="nav" position="sticky">
+            <AppBar component="nav" position="fixed">
                 <Toolbar>
                     <IconButton
                         color="inherit"
