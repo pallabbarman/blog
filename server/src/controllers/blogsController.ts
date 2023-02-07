@@ -1,11 +1,14 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
+import Blogs from '../models/blogs.js';
 
-const addBlogs = async (req: Request, res: Response, next: NextFunction) => {
+const addBlogs = async (req: Request, res: Response) => {
+    const newBlog = new Blogs(req.body);
     try {
-        return console.log('Hello');
+        const saveBlog = await newBlog.save();
+        res.status(200).json(saveBlog);
     } catch (error) {
-        return next(error);
+        res.status(500).json({ message: error });
     }
 };
 
-export default { addBlogs };
+export default addBlogs;

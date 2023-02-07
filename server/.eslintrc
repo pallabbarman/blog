@@ -16,7 +16,7 @@
         "no-console": 0,
         "indent": 0,
         "import/extensions": 0,
-        // "import/no-unresolved": 0,
+        "import/no-unresolved": 0,
         "linebreak-style": 0,
         "prettier/prettier": [
             "error",

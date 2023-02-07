@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 // internal imports
 import 'dotenv/config';
 // external imports

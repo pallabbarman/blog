@@ -17,6 +17,13 @@ const blogSchema = new Schema(
             type: String,
             required: true,
         },
+        username: {
+            type: String,
+            required: true,
+        },
+        category: {
+            type: Array,
+        },
     },
     {
         timestamps: true,
