@@ -6,6 +6,7 @@ const { MONGO_URL } = process.env;
 
 // database connection
 const connectWithDB = () => {
+    mongoose.set('strictQuery', true);
     mongoose
         .connect(MONGO_URL as string)
         .then(() => console.log('database connection successful!'))

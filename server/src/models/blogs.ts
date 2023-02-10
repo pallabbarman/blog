@@ -21,7 +21,7 @@ const blogSchema = new Schema(
             type: String,
             required: true,
         },
-        category: {
+        categories: {
             type: Array,
         },
     },

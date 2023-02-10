@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const { MONGO_URL } = process.env;
 // database connection
 const connectWithDB = () => {
+    mongoose.set('strictQuery', true);
     mongoose
         .connect(MONGO_URL)
         .then(() => console.log('database connection successful!'))
