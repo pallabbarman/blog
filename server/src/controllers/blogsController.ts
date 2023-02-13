@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 /* eslint-disable comma-dangle */
 import { Request, Response } from 'express';
-import Blogs from '../models/blogs.js';
+import Blogs from '../models/Blogs.js';
 
 // get all blogs
 const getBlogs = async (req: Request, res: Response) => {

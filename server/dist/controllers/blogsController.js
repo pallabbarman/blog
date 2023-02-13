@@ -1,4 +1,5 @@
-import Blogs from '../models/blogs.js';
+import Blogs from '../models/Blogs.js';
+// get all blogs
 const getBlogs = async (req, res) => {
     const username = req.query.user;
     const catName = req.query.cat;
@@ -23,6 +24,7 @@ const getBlogs = async (req, res) => {
         res.status(500).json({ message: error });
     }
 };
+// get single blog
 const getSingleBlog = async (req, res) => {
     try {
         const blog = await Blogs.findById(req.params.id);
@@ -32,6 +34,7 @@ const getSingleBlog = async (req, res) => {
         res.status(500).json({ message: error });
     }
 };
+// add blog
 const addBlogs = async (req, res) => {
     const newBlog = new Blogs(req.body);
     try {
@@ -42,6 +45,7 @@ const addBlogs = async (req, res) => {
         res.status(500).json({ message: error });
     }
 };
+// edit blog
 const editBlog = async (req, res) => {
     try {
         const blog = await Blogs.findById(req.params.id);
@@ -66,6 +70,7 @@ const editBlog = async (req, res) => {
         res.status(500).json({ message: error });
     }
 };
+// delete blog
 const deleteBlog = async (req, res) => {
     try {
         const blog = await Blogs.findById(req.params.id);
