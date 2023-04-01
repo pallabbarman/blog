@@ -3,7 +3,7 @@ import { addCategories, deleteCategory, getCategories, } from '../controllers/ca
 // router
 const router = Router();
 // category routers
-router.post('/new', addCategories);
+router.post('/', addCategories);
 router.get('/', getCategories);
 router.delete('/:id', deleteCategory);
 export default router;

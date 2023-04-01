@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, Grid, Skeleton } from '@mui/material';
 function CardSkeleton() {
     return (
         <>
-            {Array.from(new Array(5)).map(() => (
+            {Array.from(new Array(4)).map(() => (
                 <Grid item key={Math.random().toString(16).slice(2)}>
                     <Card sx={{ width: 345 }}>
                         <CardHeader

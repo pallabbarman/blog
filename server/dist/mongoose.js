@@ -1,6 +1,5 @@
-// external imports
 import mongoose from 'mongoose';
-// env
+// mongo connection url
 const { MONGO_URL } = process.env;
 // database connection
 const connectWithDB = () => {

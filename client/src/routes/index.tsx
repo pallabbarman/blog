@@ -1,12 +1,8 @@
-import loadable, { lazy } from '@loadable/component';
+import { lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-// layout
-const Layout = loadable(() => import('./layout'));
-
-// pages
-const Home = lazy(() => import('./pages/Home'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+const Layout = lazy(() => import('../layout'));
+const Home = lazy(() => import('../pages/Home'));
 
 const router = createBrowserRouter([
     {
@@ -18,10 +14,6 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
         ],
-    },
-    {
-        path: '*',
-        element: <NotFound />,
     },
 ]);
 
