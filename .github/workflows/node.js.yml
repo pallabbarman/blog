@@ -13,15 +13,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: ./client
 
     strategy:
       matrix:
         node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    
-    defaults:
-      run:
-        working-directory: ./client
         
     steps:
     - uses: actions/checkout@v3
@@ -30,6 +30,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
+        cache-dependency-path: './client/yarn.lock'
     - run: yarn install 
     - run: yarn build 
     - run: yarn test
