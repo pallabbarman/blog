@@ -25,7 +25,9 @@ function Home() {
                 {isLoading ? (
                     <CardSkeleton />
                 ) : (
-                    blogs.teams.map((blog: any) => <BlogCard blog={blog} />)
+                    blogs.teams.map((blog: any) => (
+                        <BlogCard blog={blog} key={blog.idTeam} />
+                    ))
                 )}
             </Grid>
         </Box>
