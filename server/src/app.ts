@@ -1,9 +1,11 @@
 /* eslint-disable object-curly-newline */
+import cors from 'cors';
 import express, { Express, Request, Response } from 'express';
 import { authRouter, blogRouter, categoryRouter, usersRouter } from './routers/index.js';
 
 const app: Express = express();
 
+app.use(cors());
 app.use(express.json());
 
 // routers

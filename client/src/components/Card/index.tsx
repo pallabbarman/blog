@@ -7,29 +7,28 @@ import {
     Grid,
     Typography,
 } from '@mui/material';
+import { blogObject } from '../../types/blog';
 
-function BlogCard(props: any) {
-    const { blog } = props;
-    const {
-        strTeam,
-        strTeamBadge,
-        strStadium,
-        strStadiumThumb,
-        strStadiumDescription,
-    } = blog;
+interface BlogCardProps {
+    blog: blogObject;
+}
+
+function BlogCard({ blog }: BlogCardProps) {
+    const { title, description, username, thumbnail, createdAt } = blog;
+
     return (
         <Grid item>
             <Card sx={{ maxWidth: 345 }}>
                 <CardHeader
-                    avatar={<Avatar alt={strTeam} src={strTeamBadge} />}
-                    title={strTeam}
-                    subheader={strStadium}
+                    avatar={<Avatar alt={title} src={thumbnail} />}
+                    title={username}
+                    subheader={createdAt}
                 />
                 <CardMedia
                     component="img"
                     height="194"
-                    image={strStadiumThumb}
-                    alt={strTeam}
+                    image={thumbnail}
+                    alt={title}
                 />
                 <CardContent>
                     <Typography
@@ -43,7 +42,7 @@ function BlogCard(props: any) {
                             display: '-webkit-box',
                         }}
                     >
-                        {strStadiumDescription}
+                        {description}
                     </Typography>
                 </CardContent>
             </Card>

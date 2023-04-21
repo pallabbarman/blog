@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ErrorBoundary from './components/ErrorBoundary';
 import CircularLoader from './components/Spinners/CircularLoader';
 import store from './redux/app';
@@ -12,7 +13,7 @@ function App() {
         <Provider store={store}>
             <ErrorBoundary>
                 <Suspense fallback={<CircularLoader />}>
-                    <ToastContainer />
+                    <ToastContainer position="top-center" />
                     <RouterProvider
                         router={router}
                         fallbackElement={<CircularLoader />}

@@ -1,6 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 import { Box, Grid } from '@mui/material';
 import { lazy } from 'react';
+import { toast } from 'react-toastify';
 import { useGetBlogsQuery } from '../../redux/features/blogs';
+import { blogObject } from '../../types/blog';
 
 const BlogCard = lazy(() => import('../../components/Card'));
 const CardSkeleton = lazy(
@@ -8,7 +11,24 @@ const CardSkeleton = lazy(
 );
 
 function Home() {
-    const { data: blogs, isLoading } = useGetBlogsQuery();
+    const { data: blogs, isLoading, isError } = useGetBlogsQuery();
+
+    let content = null;
+
+    if (isLoading) {
+        content = <CardSkeleton />;
+    }
+    if (!isLoading && isError) {
+        content = toast.error('Something went wrong! Please try again!');
+    }
+    if (!isLoading && !isError && blogs?.length === 0) {
+        content = toast.error('No videos found!');
+    }
+    if (!isLoading && !isError && blogs?.length > 0) {
+        content = blogs.map((blog: blogObject) => (
+            <BlogCard blog={blog} key={blog._id} />
+        ));
+    }
 
     return (
         <Box>
@@ -22,13 +42,7 @@ function Home() {
                 justifyContent="center"
                 p={2}
             >
-                {isLoading ? (
-                    <CardSkeleton />
-                ) : (
-                    blogs.teams.map((blog: any) => (
-                        <BlogCard blog={blog} key={blog.idTeam} />
-                    ))
-                )}
+                {content}
             </Grid>
         </Box>
     );
