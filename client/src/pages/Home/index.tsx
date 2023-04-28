@@ -34,7 +34,6 @@ function Home() {
         <Box>
             <Grid
                 container
-                mt={6}
                 mb={2}
                 spacing={3}
                 columns={{ xs: 4, sm: 8, md: 12 }}
