@@ -1,6 +1,5 @@
 /* eslint-disable comma-dangle */
-import mongoose from 'mongoose';
-const { Schema } = mongoose;
+import { Schema, model } from 'mongoose';
 const blogSchema = new Schema({
     title: {
         type: String,
@@ -24,5 +23,5 @@ const blogSchema = new Schema({
 }, {
     timestamps: true,
 });
-const Blogs = mongoose.model('Blogs', blogSchema);
+const Blogs = model('Blogs', blogSchema);
 export default Blogs;

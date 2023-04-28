@@ -1,4 +1,4 @@
-import Blogs from '../models/Blogs.js';
+import Blogs from '../models/blogs.js';
 // get all blogs
 const getBlogs = async (req, res) => {
     const username = req.query.user;

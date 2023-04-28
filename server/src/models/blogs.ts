@@ -1,7 +1,6 @@
 /* eslint-disable comma-dangle */
-import mongoose from 'mongoose';
-
-const { Schema } = mongoose;
+import { Schema, model } from 'mongoose';
+import { blogObject } from '../types/blog.js';
 
 const blogSchema = new Schema(
     {
@@ -30,6 +29,6 @@ const blogSchema = new Schema(
     }
 );
 
-const Blogs = mongoose.model('Blogs', blogSchema);
+const Blogs = model<blogObject>('Blogs', blogSchema);
 
 export default Blogs;

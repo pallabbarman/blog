@@ -3,8 +3,8 @@
 /* eslint-disable object-curly-newline */
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import Blogs from '../models/Blogs.js';
-import User from '../models/User.js';
+import Blogs from '../models/blogs.js';
+import User from '../models/user.js';
 
 // update user
 const updateUser = async (req: Request, res: Response) => {
