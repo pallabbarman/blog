@@ -1,16 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable object-curly-newline */
-import cors from 'cors';
-import express from 'express';
-import { authRouter, blogRouter, categoryRouter, usersRouter } from './routers/index.js';
-const app = express();
-app.use(cors());
-app.use(express.json());
+const cors_1 = __importDefault(require("cors"));
+const express_1 = __importDefault(require("express"));
+const index_js_1 = require("./routers/index.js");
+const app = (0, express_1.default)();
+app.use((0, cors_1.default)());
+app.use(express_1.default.json());
 // routers
-app.use('/api/auth', authRouter);
-app.use('/api/users', usersRouter);
-app.use('/api/blogs', blogRouter);
-app.use('/api/categories', categoryRouter);
+app.use('/api/auth', index_js_1.authRouter);
+app.use('/api/users', index_js_1.usersRouter);
+app.use('/api/blogs', index_js_1.blogRouter);
+app.use('/api/categories', index_js_1.categoryRouter);
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-export default app;
+exports.default = app;

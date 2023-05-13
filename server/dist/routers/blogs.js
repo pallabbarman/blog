@@ -1,11 +1,13 @@
-import { Router } from 'express';
-import { addBlogs, deleteBlog, editBlog, getBlogs, getSingleBlog, } from '../controllers/blogsController.js';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const blogsController_js_1 = require("../controllers/blogsController.js");
 // router
-const router = Router();
+const router = (0, express_1.Router)();
 // blogs routers
-router.post('/', addBlogs);
-router.put('/:id', editBlog);
-router.get('/', getBlogs);
-router.get('/:id', getSingleBlog);
-router.delete('/:id', deleteBlog);
-export default router;
+router.post('/', blogsController_js_1.addBlogs);
+router.put('/:id', blogsController_js_1.editBlog);
+router.get('/', blogsController_js_1.getBlogs);
+router.get('/:id', blogsController_js_1.getSingleBlog);
+router.delete('/:id', blogsController_js_1.deleteBlog);
+exports.default = router;

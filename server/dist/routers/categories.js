@@ -1,9 +1,11 @@
-import { Router } from 'express';
-import { addCategories, deleteCategory, getCategories, } from '../controllers/categoriesController.js';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const categoriesController_js_1 = require("../controllers/categoriesController.js");
 // router
-const router = Router();
+const router = (0, express_1.Router)();
 // category routers
-router.post('/', addCategories);
-router.get('/', getCategories);
-router.delete('/:id', deleteCategory);
-export default router;
+router.post('/', categoriesController_js_1.addCategories);
+router.get('/', categoriesController_js_1.getCategories);
+router.delete('/:id', categoriesController_js_1.deleteCategory);
+exports.default = router;
