@@ -3,15 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
+var mongoose_1 = __importDefault(require("mongoose"));
 // mongo connection url
-const { MONGO_URL } = process.env;
+var MONGO_URL = process.env.MONGO_URL;
 // database connection
-const connectWithDB = () => {
+var connectWithDB = function () {
     mongoose_1.default.set('strictQuery', true);
     mongoose_1.default
         .connect(MONGO_URL)
-        .then(() => console.log('database connection successful!'))
-        .catch((err) => console.error(err));
+        .then(function () { return console.log('database connection successful!'); })
+        .catch(function (err) { return console.error(err); });
 };
 exports.default = connectWithDB;

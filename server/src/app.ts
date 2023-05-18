@@ -1,9 +1,9 @@
 /* eslint-disable object-curly-newline */
 import cors from 'cors';
-import express, { Express, Request, Response } from 'express';
-import { authRouter, blogRouter, categoryRouter, usersRouter } from './routers/index.js';
+import express, { Application, Request, Response } from 'express';
+import { authRouter, blogRouter, categoryRouter, usersRouter } from './routers';
 
-const app: Express = express();
+const app: Application = express();
 
 app.use(cors());
 app.use(express.json());

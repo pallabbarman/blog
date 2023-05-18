@@ -5,7 +5,7 @@ import {
     editBlog,
     getBlogs,
     getSingleBlog,
-} from '../controllers/blogsController.js';
+} from '../controllers/blogsController';
 
 // router
 const router = Router();
