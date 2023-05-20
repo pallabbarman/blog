@@ -2,8 +2,8 @@
 import { Box, Grid } from '@mui/material';
 import { lazy } from 'react';
 import { toast } from 'react-toastify';
-import { useGetBlogsQuery } from '../../redux/features/blogs';
-import { blogObject } from '../../types/blog';
+import { useGetBlogsQuery } from 'redux/features/blogs';
+import { IBlog } from 'types/blog';
 
 const BlogCard = lazy(() => import('../../components/Card'));
 const CardSkeleton = lazy(
@@ -24,8 +24,8 @@ function Home() {
     if (!isLoading && !isError && blogs?.length === 0) {
         content = toast.error('No videos found!');
     }
-    if (!isLoading && !isError && blogs?.length > 0) {
-        content = blogs.map((blog: blogObject) => (
+    if (!isLoading && !isError && blogs?.length !== undefined) {
+        content = blogs.map((blog: IBlog) => (
             <BlogCard blog={blog} key={blog._id} />
         ));
     }

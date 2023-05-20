@@ -1,6 +1,6 @@
 import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import Searchbox from 'components/Searchbox';
 import { NavLink } from 'react-router-dom';
-import Searchbox from '../Searchbox';
 
 function Navbar() {
     return (

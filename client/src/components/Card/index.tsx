@@ -7,10 +7,10 @@ import {
     Grid,
     Typography,
 } from '@mui/material';
-import { blogObject } from '../../types/blog';
+import { IBlog } from 'types/blog';
 
 interface BlogCardProps {
-    blog: blogObject;
+    blog: IBlog;
 }
 
 function BlogCard({ blog }: BlogCardProps) {

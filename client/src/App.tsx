@@ -1,11 +1,11 @@
+import ErrorBoundary from 'components/ErrorBoundary';
+import CircularLoader from 'components/Spinners/CircularLoader';
 import { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorBoundary from './components/ErrorBoundary';
-import CircularLoader from './components/Spinners/CircularLoader';
-import store from './redux/app';
+import store from 'redux/app';
 import router from './routes';
 
 function App() {
