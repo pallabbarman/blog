@@ -5,11 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.usersRouter = exports.authRouter = exports.categoryRouter = exports.blogRouter = void 0;
 /* eslint-disable object-curly-newline */
-var auth_js_1 = __importDefault(require("./auth.js"));
+const auth_js_1 = __importDefault(require("./auth.js"));
 exports.authRouter = auth_js_1.default;
-var blogs_js_1 = __importDefault(require("./blogs.js"));
+const blogs_js_1 = __importDefault(require("./blogs.js"));
 exports.blogRouter = blogs_js_1.default;
-var categories_js_1 = __importDefault(require("./categories.js"));
+const categories_js_1 = __importDefault(require("./categories.js"));
 exports.categoryRouter = categories_js_1.default;
-var users_js_1 = __importDefault(require("./users.js"));
+const users_js_1 = __importDefault(require("./users.js"));
 exports.usersRouter = users_js_1.default;

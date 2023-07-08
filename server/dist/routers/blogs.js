@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var blogsController_1 = require("../controllers/blogsController");
+const express_1 = require("express");
+const blogsController_1 = require("../controllers/blogsController");
 // router
-var router = (0, express_1.Router)();
+const router = (0, express_1.Router)();
 // blogs routers
 router.post('/', blogsController_1.addBlogs);
 router.put('/:id', blogsController_1.editBlog);

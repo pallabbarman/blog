@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable comma-dangle */
-var mongoose_1 = require("mongoose");
-var blogSchema = new mongoose_1.Schema({
+const mongoose_1 = require("mongoose");
+const blogSchema = new mongoose_1.Schema({
     title: {
         type: String,
         required: true,
@@ -25,5 +25,5 @@ var blogSchema = new mongoose_1.Schema({
 }, {
     timestamps: true,
 });
-var Blogs = (0, mongoose_1.model)('Blogs', blogSchema);
+const Blogs = (0, mongoose_1.model)('Blogs', blogSchema);
 exports.default = Blogs;
