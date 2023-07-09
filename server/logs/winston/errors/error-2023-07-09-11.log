@@ -1,0 +1,1 @@
+Sun Jul 09 2023 11:59:0 [debug] error: Failed to connect database MongoParseError: Invalid scheme, expected connection string to start with "mongodb://" or "mongodb+srv://"
