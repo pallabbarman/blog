@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable comma-dangle */
 import { role } from 'constants/user';
 import { Schema, model } from 'mongoose';
@@ -51,6 +52,9 @@ const userSchema = new Schema<IUser>(
         timestamps: true,
         toJSON: {
             virtuals: true,
+            transform(_doc, ret) {
+                delete ret.password; // Exclude the password field from the JSON object
+            },
         },
     }
 );
