@@ -16,3 +16,8 @@ export interface IUser {
 }
 
 export type UserModel = Model<IUser, Record<string, unknown>>;
+
+export type IUserFilters = {
+    search?: string;
+    address?: string;
+};

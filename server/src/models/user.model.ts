@@ -1,4 +1,5 @@
 /* eslint-disable comma-dangle */
+import { role } from 'constants/user';
 import { Schema, model } from 'mongoose';
 import { IUser, UserModel } from 'types/user';
 
@@ -20,6 +21,7 @@ const userSchema = new Schema<IUser>(
         },
         role: {
             type: String,
+            enum: role,
             required: true,
         },
         email: {

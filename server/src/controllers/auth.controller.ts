@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { newUser } from 'services/user.service';
+import { newUser } from 'services/auth.service';
 import { IUser } from 'types/user';
 import catchAsync from 'utils/catchAsync';
 import sendResponse from 'utils/sendResponse';
