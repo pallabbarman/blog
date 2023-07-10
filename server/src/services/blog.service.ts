@@ -55,7 +55,8 @@ export const allBlogs = async (
         .sort(sortCondition)
         .skip(skip)
         .limit(limit)
-        .populate('user');
+        .populate('user')
+        .populate('comment');
 
     const total = await Blog.countDocuments();
 
@@ -67,4 +68,10 @@ export const allBlogs = async (
         },
         data: result,
     };
+};
+
+export const singleBlog = async (id: string): Promise<IBlog | null> => {
+    const result = await Blog.findById(id).populate('user').populate('comment');
+
+    return result;
 };

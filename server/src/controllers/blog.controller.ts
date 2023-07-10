@@ -3,7 +3,7 @@ import { blogFilterableFields } from 'constants/blog';
 import paginationFields from 'constants/pagination';
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { allBlogs, newBlog } from 'services/blog.service';
+import { allBlogs, newBlog, singleBlog } from 'services/blog.service';
 import { IBlog } from 'types/blog';
 import catchAsync from 'utils/catchAsync';
 import pick from 'utils/pick';
@@ -34,5 +34,18 @@ export const getAllBlogs = catchAsync(async (req: Request, res: Response) => {
         message: 'Blogs retrieved successfully!',
         meta: result.meta,
         data: result.data,
+    });
+});
+
+export const getSingleBlog = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    const result = await singleBlog(id);
+
+    sendResponse<IBlog>(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Blog retrieved successfully!',
+        data: result,
     });
 });

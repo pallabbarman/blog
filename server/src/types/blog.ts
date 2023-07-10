@@ -1,4 +1,5 @@
 import { Model, Types } from 'mongoose';
+import { IComment } from './comment';
 import { IUser } from './user';
 
 export interface IVotes {
@@ -8,7 +9,7 @@ export interface IVotes {
 export interface IBlog {
     title: string;
     content: string;
-    comment: string;
+    comment: Array<Types.ObjectId | IComment>;
     thumbnail: string;
     slug: string;
     meta?: IVotes;

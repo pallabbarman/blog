@@ -18,10 +18,6 @@ const blogSchema = new Schema<IBlog>(
             type: String,
             required: true,
         },
-        comment: {
-            type: String,
-            required: true,
-        },
         thumbnail: {
             type: String,
             required: true,
@@ -41,6 +37,12 @@ const blogSchema = new Schema<IBlog>(
             ref: 'User',
             required: true,
         },
+        comment: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Comment',
+            },
+        ],
     },
     {
         timestamps: true,

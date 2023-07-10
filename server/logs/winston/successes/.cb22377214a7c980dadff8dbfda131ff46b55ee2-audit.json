@@ -24,6 +24,21 @@
             "date": 1688896800610,
             "name": "D:\\Pallab\\blog\\server\\logs\\winston\\successes\\success-2023-07-09-16.log",
             "hash": "85e75f7f33c27013d35bf653b4365fe9e8f82e86c9a6fd5e64665518d7d1f093"
+        },
+        {
+            "date": 1688982228952,
+            "name": "D:\\Pallab\\blog\\server\\logs\\winston\\successes\\success-2023-07-10-15.log",
+            "hash": "735e479f88cfff62c025e1bd7b7daa6eda2419817d62d6c0774f71389c0d1d2a"
+        },
+        {
+            "date": 1688985605890,
+            "name": "D:\\Pallab\\blog\\server\\logs\\winston\\successes\\success-2023-07-10-16.log",
+            "hash": "1b4f56de57bcd827581f0157ce3a4d242be3aa125a9755ddc97446aca01f9a4f"
+        },
+        {
+            "date": 1688987038204,
+            "name": "D:\\Pallab\\blog\\server\\logs\\winston\\successes\\success-2023-07-10-17.log",
+            "hash": "867c1d31234971e4c3ded4ea0db8542e0e8b9ad7f659ca2d5b86fb07eddcadd2"
         }
     ],
     "hashType": "sha256"

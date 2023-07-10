@@ -9,9 +9,11 @@ export const blogValidation = z.object({
         content: z.string({
             required_error: 'Content is required',
         }),
-        comment: z.string({
-            required_error: 'Phone number is required!',
-        }),
+        comment: z
+            .string({
+                required_error: 'Phone number is required!',
+            })
+            .array(),
         thumbnail: z.string({
             required_error: 'Password is required!',
         }),
